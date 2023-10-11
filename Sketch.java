@@ -5,12 +5,13 @@ import java.util.Random;
 public class Sketch extends PApplet {
 
   public void settings() {
-    // put your size call here
+    // size settings
     size(600, 600);
   }
 
   // background color
   public void setup() {
+    // default background light blue
     background(252, 86, 3);
   }
 
@@ -20,26 +21,28 @@ public class Sketch extends PApplet {
   int randomPositionY = myRandom.nextInt(400);
 
   public void draw() {
-
-    // if the randomly generated coordinate will get blocked by the house, keep generating
-    // a new one
+  
+    // if the randomly generated coordinate will get blocked by the house, keep
+    // generating a new one
     while (randomPositionY >= 200 && randomPositionX >= 200 && randomPositionX <= 400)
       randomPositionX = myRandom.nextInt(500) + 50;
 
     if (randomPositionY >= 200 && randomPositionX <= 200) {
-      // location in bottom left corner, morning/sunrise time, change background color to orange
+      // location in bottom left corner, morning/sunrise time, change background color
+      // to orange
       background(242, 122, 2);
       // change sun color to bright yellow
       fill(253, 255, 117);
-    } else if(randomPositionY >= 200 && randomPositionX >= 400) {
-      // location in bottom right corner, evening/sunset, change background to dark blue
+    } else if (randomPositionY >= 200 && randomPositionX >= 400) {
+      // location in bottom right corner, evening/sunset, change background to dark
+      // blue
       background(31, 31, 94);
-      //change sun color to red 
+      // change sun color to red
       fill(252, 86, 3);
     } else {
       // location in top side of the screen, noon, change background to light blue
       background(3, 252, 240);
-      //change sun color to medium yellow 
+      // change sun color to medium yellow
       fill(252, 227, 3);
 
     }
@@ -47,7 +50,7 @@ public class Sketch extends PApplet {
     stroke(0);
     strokeWeight(2);
 
-    // Draw the sun (random positions)
+    // Draw the sun (according to random positions and colors set beforehand)
     ellipse(randomPositionX, randomPositionY, 180, 180);
 
     // Draw house main frame
@@ -62,7 +65,6 @@ public class Sketch extends PApplet {
     stroke(84, 172, 255);
     fill(150, 255, 245);
     rect(300, 330, 80, 60);
-    strokeWeight(2);
 
     // Draw grass
     stroke(0);
