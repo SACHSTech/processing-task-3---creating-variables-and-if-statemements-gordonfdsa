@@ -1,8 +1,8 @@
 import processing.core.PApplet;
 
 /**
- * Main class to execute sketch
- * @author 
+ * Generates an random position for an object everytime 
+ * @author: Gordon Z 
  *
  */
 class Main {
