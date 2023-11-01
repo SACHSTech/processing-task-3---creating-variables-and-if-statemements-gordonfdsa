@@ -17,23 +17,23 @@ public class Sketch extends PApplet {
 
   Random myRandom = new Random();
   // generates random x and y coordinates for the sun
-  int randomPositionX = myRandom.nextInt(500) + 50;
-  int randomPositionY = myRandom.nextInt(400);
+  int intRandomPositionX = myRandom.nextInt(500) + 50;
+  int intRandomPositionY = myRandom.nextInt(400);
 
   public void draw() {
   
     // if the randomly generated coordinate will get blocked by the house, keep
     // generating a new one
-    while (randomPositionY >= 200 && randomPositionX >= 200 && randomPositionX <= 400)
-      randomPositionX = myRandom.nextInt(500) + 50;
+    while (intRandomPositionY >= 200 && intRandomPositionX >= 200 && intRandomPositionX <= 400)
+      intRandomPositionX = myRandom.nextInt(500) + 50;
 
-    if (randomPositionY >= 200 && randomPositionX <= 200) {
+    if (intRandomPositionY >= 200 && intRandomPositionX <= 200) {
       // location in bottom left corner, morning/sunrise time, change background color
       // to orange
       background(242, 122, 2);
       // change sun color to bright yellow
       fill(253, 255, 117);
-    } else if (randomPositionY >= 200 && randomPositionX >= 400) {
+    } else if (intRandomPositionY >= 200 && intRandomPositionX >= 400) {
       // location in bottom right corner, evening/sunset, change background to dark
       // blue
       background(31, 31, 94);
@@ -51,7 +51,7 @@ public class Sketch extends PApplet {
     strokeWeight(2);
 
     // Draw the sun (according to random positions and colors set beforehand)
-    ellipse(randomPositionX, randomPositionY, 180, 180);
+    ellipse(intRandomPositionX, intRandomPositionY, 180, 180);
 
     // Draw house main frame
     fill(201, 152, 54);
